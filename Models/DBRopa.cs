@@ -55,8 +55,6 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
             cliente = db.QueryFirstOrDefault<Cliente>(sql, new {pNombre = Nombre, pContraseña = Contraseña }); 
         }
         return cliente;
-       
-        
     }
 
      public static int GuardarClientes(Cliente cliente)
@@ -70,5 +68,13 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
         return r;
     }
 
+     public static List<Articulo> ListarArticulos(int IdArticulo){
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Select * From Articulos Where IdArticulo = @pIdArticulo";
+            _ListaArticulo = db.Query<Articulo>(sql, new {pIdArticulo = IdArticulo}).ToList();
+        }
+        return _ListaArticulo;
+    }
     
 }

@@ -57,6 +57,13 @@
         <br>
         <h5>$ @item.Precio ARS</h5>
         
+        <form action='@Url.Action("Compra", "Home")'>
+                <div class="text-center">
+                    <input type="submit" id="btn-check" value="Comprar articulo" class="btn btn-primary mt-auto">
+                    <input type="hidden" name="IdArticulo" value="@ViewBag.Articulo.IdArticulo">
+                </div>
+                </form>
+        
         <a data-bs-toggle="modal" data-bs-target="#modalCompra" class="btn" onclick="GetDescripcion(@item.IdArticulo)">Comprar</a>
     
       </div>

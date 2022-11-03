@@ -29,6 +29,14 @@ public class HomeController : Controller
         ViewBag.Articulo = DBRopa.InfoArticulo(idarticulo);
         return ViewBag.Articulo;
     }
+    public IActionResult AgregarJugadores(int idarticulo)
+    {
+        ViewBag.InfoDetalleArticulo = DBRopa.InfoArticulo(idarticulo);
+        ViewBag.InfoArticulo = DBRopa.ListarArticulos(idarticulo);
+        return View("Index");    
+    }
+
+    
    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
