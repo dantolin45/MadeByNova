@@ -46,7 +46,7 @@ function GetDescripcion(idarticulo)
 }
 
 
-const openModal = document.querySelector('.btn');
+const openModal = document.querySelector('#btnS');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal__close');
 

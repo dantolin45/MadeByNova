@@ -35,8 +35,8 @@ button.accept-policy {
     padding: 0;
     box-sizing: border-box;
     background-color: #ffffff;
-    border-bottom:20px solid black ;
-   
+    border-bottom:1px solid #e85909;
+    box-shadow: -1px -1px 2px 2px #e85909;
 }
  
 li,a,button {
@@ -89,7 +89,7 @@ header
  
 button
 {
-  color: white;
+    color: white;
     padding: 9px 25px;
     background-color: rgb(15, 15, 15);
     border: none;
@@ -97,3 +97,77 @@ button
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+
+/* btn navbar */
+
+#btnS
+{
+  background-color: #ffffff;
+  color: #e85909;
+  cursor: pointer;
+  
+
+}
+#btnS:hover 
+{
+  background-color: #ffffff;
+  color: #000000;
+  
+  
+
+}
+
+
+/*search*/
+
+.search
+{
+  position:absolute;
+  left: 15%;
+
+
+
+}
+
+#txt
+{
+  width: 1000px;
+  height: 35px;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  border: 0px ;
+}
+
+#searchbtn
+{
+  width: 80px;
+  height: 35px;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  color: #e85909;
+  border: 0px solid black;
+
+}
+#searchbtn:hover
+{
+  background-color: #e85909;
+  box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+
+  color: #ffffff;
+  
+}
+
+/* signup */
+.contenedor-sign-up
+{
+  position: absolute;
+  justify-content: space-between;
+
+  padding: 5px;
+  left: 75%;
+  top: 5%;
+}
+

@@ -18,31 +18,27 @@
 </head>
 <body>
  <!-- NavUp -->
-
-
-  <div class="sas" >
-
- 
+ <div class="sas" >
         <nav>
             <ul class="nav__links" style="justify-content: center;">
-                <li><img src="~/img/madebynova.png" id="logo"></li>
+                <li><img src="~/img/madebynova.png" style="width: 100px;"></li>
                 <li>
-                  
+                  <div class="search">
                   <form action='@Url.Action("busqueda", "Home")' role="search" method="get">
-                    <input type="text" name ="txt" placeholder="Search">
-                    <input type="submit" value="Search">
+                    <input type="text" name ="txt" placeholder="Search" id="txt">
+                    <input type="submit" value="Search" id="searchbtn">
                   </form>
-                
+                </div>
                 </li>
                 
               
                  
                   
                   <div class="contenedor-sign-up">
-                    <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" class="btn" > Iniciar Sesion</a>
+                    <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" id="btnS" > Iniciar Sesion</a>
                    </li> 
 
-                    <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" class="btn" > Registrarse</a>
+                    <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" id="btnS" > Registrarse</a>
                     </li>
                   </div>
                 
@@ -51,9 +47,10 @@
                 
             </ul>
         </nav>
- 
+
         
  </div>
+ <br><br>
     
 <!-- NavDown -->
 
@@ -67,13 +64,13 @@
               <div class="center">
                 <form action='@Url.Action("BuscarCliente", "Home")'>
                     <div class="login"> 
-                    <label >Username</label>
-                    <input type="text" name="nombre" required>
+                      
+                    <input type="text" name="nombre"  placeholder="Username" id="txts"required>
                       </div>
                       
                        <div class="login"> 
-                    <label >Password</label>
-                    <input type="text" name="contraseña" required>
+                    
+                    <input type="text" name="contraseña" placeholder="Password" id="txts" required >
                       </div>
                       
                           <div class="btn">
