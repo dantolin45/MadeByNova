@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using Dapper;
-
+ 
 namespace TP09.Models;
 public static class DBRopa
 
@@ -13,7 +13,7 @@ private static List<Tipos> _ListaTipos = new List<Tipos>();
 private static List<Cliente> _ListaCliente = new List<Cliente>();
 
 
-  private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
+  private static string _connectionString = @"Data Source=AA\SQLEXPRESS;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
 
   public static List<Articulo> TraerArticulo()
@@ -25,6 +25,7 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
         }
         return _ListaArticulo;
     }
+  
 
  public static List<Articulo> BuscarArticulos(string txt)
     {

@@ -57,6 +57,13 @@ public class HomeController : Controller
 
     }
     
+    public IActionResult ArticuloTocar(int idarticulo)
+    {
+        ViewBag.Articulotocar = DBRopa.InfoArticulo(idarticulo);
+        return View("Articulo");
+
+    }
+
     public IActionResult GuardarCliente(Cliente cliente)
     {
         ViewBag.Cliente= DBRopa.GuardarClientes(cliente);

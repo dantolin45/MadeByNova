@@ -47,12 +47,19 @@ function GetDescripcion(idarticulo)
 
 
 const openModal = document.querySelector('#btnS');
+const openModals = document.querySelector('#btnSe');
 const modal = document.querySelector('.modal');
+const modale = document.querySelector('.modale');
 const closeModal = document.querySelector('.modal__close');
 
 openModal.addEventListener('click', (e)=>{
     e.preventDefault();
     modal.classList.add('modal--show');
+});
+
+openModals.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modale.classList.add('modal--show');
 });
 
 closeModal.addEventListener('click', (e)=>{
