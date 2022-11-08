@@ -2,7 +2,8 @@ using System;
 public class Compra
 {
     private int _IdCompra;
-     private int _IdArticulo; 
+     private int _IdArticulo;
+     private string _MedioDePago; 
      private string _Direccion;
      private string _Email;
      private int _Telefono;
@@ -13,9 +14,9 @@ public class Compra
     {
 
     }
-    public Compra(int pIdCompra, int pIdArticulo, string pDireccion, string pEmail, int pTelefono, string pNombre , int pIdCliente)
+    public Compra(int pIdCompra, int pIdArticulo, string pMedioDePago, string pDireccion, string pEmail, int pTelefono, string pNombre , int pIdCliente)
     {
-        _IdCompra = pIdCompra; _IdArticulo = pIdArticulo; _Direccion = pDireccion; _Email = pEmail; _Telefono = pTelefono; _Nombre = pNombre; _IdCliente = pIdCliente;
+        _IdCompra = pIdCompra; _IdArticulo = pIdArticulo; _MedioDePago = pMedioDePago; _Direccion = pDireccion; _Email = pEmail; _Telefono = pTelefono; _Nombre = pNombre; _IdCliente = pIdCliente;
     }
  
     public int IdCompra
@@ -28,6 +29,11 @@ public class Compra
         get{return _IdArticulo;}
         set{_IdArticulo=value;}
     } 
+    public string MedioDePago
+    {
+        get{return _MedioDePago;}
+        set{_MedioDePago=value;}
+    }
     public string Direccion
     {
         get{return _Direccion;}

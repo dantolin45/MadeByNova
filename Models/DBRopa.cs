@@ -14,7 +14,6 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
 
 public static Cliente clienteLogueado = null;
 
-
   private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
 
@@ -28,7 +27,6 @@ public static Cliente clienteLogueado = null;
         return _ListaArticulo;
     }
   
-
  public static List<Articulo> BuscarArticulos(string txt)
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -60,21 +58,28 @@ public static Cliente clienteLogueado = null;
         return cliente;
     }
 
-     public static int GuardarClientes(Cliente cliente)
+     public static void GuardarClientes(string nombre, string contraseña, string mail)
     {
-        int r = 0;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Insert Into Cliente VALUES cliente";
-            r = db.Execute(sql , new{Cliente= cliente}); 
+            string sql = "Insert Into Cliente(Nombre, Contraseña,Mail) VALUES (@pnombre, @pcontraseña, @pmail)";
+            db.Execute(sql , new{pnombre= nombre, pcontraseña = contraseña, pmail=mail }); 
         }
-        return r;
+       
+    }
+    public static void AgregarCompra(int IdArticulo, string MedioDePago, string Direccion, string Email, int Telefono, string Nombre, int IdCliente)
+    {
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Insert Into Compra (IdArticulo, MedioDePago, Direccion, Email, Telefono, Nombre, IdCliente) Values (@pIdArticulo, @pMedioDePago, @pDireccion, @pEmail, @pTelefono, @pNombre, 1)";
+            db.Execute(sql, new {pIdArticulo = IdArticulo, pMedioDePago = MedioDePago, pDireccion = Direccion, pEmail = Email, pTelefono = Telefono, pNombre = Nombre, pIdCliente = 1});
+        }
     }
 
      public static List<Articulo> ListarArticulos(int IdArticulo){
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Select * From Articulos Where IdArticulo = @pIdArticulo";
+            string sql = "Select * From Articulo Where IdArticulo = @pIdArticulo";
             _ListaArticulo = db.Query<Articulo>(sql, new {pIdArticulo = IdArticulo}).ToList();
         }
         return _ListaArticulo;

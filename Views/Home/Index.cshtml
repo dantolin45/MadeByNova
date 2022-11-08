@@ -44,8 +44,8 @@
         <br>
         <h5>$ @item.Precio ARS</h5> 
         
-        <a data-bs-toggle="modal" data-bs-target="#modalCompra" class="btn" onclick="GetDescripcion(@item.IdArticulo)">Comprar</a>
-    
+        <a href='@Url.Action("Compra", "Home", new{idarticulo = @item.IdArticulo})' class="btn" >Comprar</a>
+        
       </div>
     </div>
   }

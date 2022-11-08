@@ -65,13 +65,32 @@ public class HomeController : Controller
         return View("Articulo");
 
     }
-
-    public IActionResult GuardarCliente(Cliente cliente)
+    public IActionResult Compra(int idarticulo)
     {
-        ViewBag.Cliente= DBRopa.GuardarClientes(cliente);
+        ViewBag.Articulo = idarticulo;
+        return View("Compra");
+
+    }
+     public IActionResult VerDetalleArticulos(int IdArticulo)
+    {
+        ViewBag.InfoDetalleArticulo = DBRopa.InfoArticulo(IdArticulo);
+        return View("DetalleCompra");
+    }
+    public IActionResult GuardarCliente(string nombre, string contraseña, string mail)
+    {
+        DBRopa.GuardarClientes(nombre, contraseña, mail);
         return View("Index");
     }
     
-
+    [HttpPost]
+    public IActionResult GuardarCompra(int IdArticulo, string MedioDePago, string Direccion, string Email, int Telefono, string Nombre, int IdCliente)
+    {    
+        DBRopa.AgregarCompra(IdArticulo, MedioDePago, Direccion, Email, Telefono, Nombre, IdCliente);
+        
+        ViewBag.InfoDetalleArticulo = DBRopa.InfoArticulo(IdArticulo);
+        ViewBag.InfoArticulo = DBRopa.ListarArticulos(IdArticulo);
+        int IdEq = IdArticulo;
+        return RedirectToAction("Index", "Home", new{IdArticulo = IdEq});     
+    }
 
 }
