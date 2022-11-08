@@ -12,6 +12,7 @@ private static List<Articulo> _ListaArticulo = new List<Articulo>();
 private static List<Tipos> _ListaTipos = new List<Tipos>();
 private static List<Cliente> _ListaCliente = new List<Cliente>();
 
+public static Cliente clienteLogueado = null;
 
   private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
@@ -57,15 +58,14 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
         return cliente;
     }
 
-     public static int GuardarClientes(Cliente cliente)
+     public static void GuardarClientes(string nombre, string contraseña, string mail)
     {
-        int r = 0;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Insert Into Cliente VALUES cliente";
-            r = db.Execute(sql , new{Cliente= cliente}); 
+            string sql = "Insert Into Cliente(Nombre, Contraseña,Mail) VALUES (@pnombre, @pcontraseña, @pmail)";
+            db.Execute(sql , new{pnombre= nombre, pcontraseña = contraseña, pmail=mail }); 
         }
-        return r;
+       
     }
     public static void AgregarCompra(int IdArticulo, string MedioDePago, string Direccion, string Email, int Telefono, string Nombre, int IdCliente)
     {

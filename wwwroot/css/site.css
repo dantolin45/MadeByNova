@@ -224,4 +224,14 @@ div.card.show {
 /*modal*/
 
 
-/* carrousel */
+/* Articulo */
+.contenedorA
+{
+  width: 1300px;
+  height: 700px;
+  background-color: #e85909;
+  border: 0px solid black;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.411);
+
+}
+

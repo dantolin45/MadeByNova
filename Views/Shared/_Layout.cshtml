@@ -21,10 +21,10 @@
  <div class="sas" >
         <nav>
             <ul class="nav__links" style="justify-content: space-between;">
-                <li><img src="~/img/madebynova.png" style="width: 100px;"></li>
+                <li><a href='@Url.Action("Index", "Home")'><img src="~/img/madebynova.png" style="width: 100px;"></a></li>
                 <li>
                   <div class="search">
-                  <form action='@Url.Action("busqueda", "Home")' role="search" method="get">
+                  <form action='@Url.Action("Busqueda", "Home")' role="search" method="get">
                     <input type="text" name ="txt" placeholder="Search" id="txt">
                     <input type="submit" value="Search" id="searchbtn">
                   </form>
@@ -33,14 +33,25 @@
                 
               
                  
-                  
-                  <div class="contenedor-sign-up">
-                    <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" id="btnS" > Iniciar Sesion</a>
-                   </li> 
+                  @if (DBRopa.clienteLogueado == null)
+                  {
+                    <div class="contenedor-sign-up">
+                      <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" id="btnS" > Iniciar Sesion</a>
+                    </li> 
 
-                    <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" id="btnSe" > Registrarse</a>
-                    </li>
-                  </div>
+                      <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" id="btnSe" > Registrarse</a>
+                      </li>
+                    </div>
+                  }
+                  else{
+                    <div class="contenedor-sign-up">
+                        <li> <a  href="" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a>
+                    </li> 
+
+                      <li> <a  href="" id="btnLe" > Log-out </a>
+                      </li>
+                    </div>
+                  }
                 
                    
                   
@@ -62,7 +73,7 @@
             <h2 class="modal__title">Inicia sesion</h2>
              <p class="modal__paragraph">
               <div class="center">
-                <form action='@Url.Action("BuscarCliente", "Home")'>
+                <form action='@Url.Action("BuscarCliente", "Home")' method="post">
                     <div class="login"> 
                       
                     <input type="text" name="nombre"  placeholder="Username" id="txts"required>
@@ -70,7 +81,7 @@
                       
                        <div class="login"> 
                     
-                    <input type="text" name="contraseña" placeholder="Password" id="txts" required >
+                    <input type="password" name="contraseña" placeholder="Password" id="txts" required >
                       </div>
                       
                           <div class="btn">

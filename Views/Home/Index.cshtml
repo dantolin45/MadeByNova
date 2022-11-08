@@ -29,14 +29,14 @@
 
 
 
-<div class="row row-cols-1 row-cols-md-2 g-3">
+<div class="row row-cols-1 row-cols-md-2 g-4">
 
   @foreach (var item in ViewBag.Articulo)
   {
     <div class="card" style="width: 500px; margin-left: 100px; margin-top: 20px; padding: 0px;">
-      <a onclick='@Url.Action("ArticuloTocar","Home")'  >
+      <a href='@Url.Action("ArticuloTocar","Home",new {idarticulo = item.IdArticulo})'  >
       <img src='@item.ImagenArticulo' class="card-img-top" style="width: 100%; background: white;"
-        alt="imagen articulo" value="@item.IdArticulo" />  </a> <!-- preguntar como hacer para q se reedireccione a la pagina articulo -->
+        alt="imagen articulo"/>  </a> <!-- preguntar como hacer para q se reedireccione a la pagina articulo -->
 
       <div class="card-body">
       

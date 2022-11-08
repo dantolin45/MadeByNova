@@ -49,10 +49,12 @@ public class HomeController : Controller
         return View("Index");
 
     }
+    [HttpPost]
     public IActionResult BuscarCliente (string nombre, string contraseña)
     {
         ViewBag.Cliente = DBRopa.BuscarCliente(nombre, contraseña);
-        
+        DBRopa.clienteLogueado =  ViewBag.Cliente;
+        ViewBag.Articulo = DBRopa.TraerArticulo();
         return View("Index");
 
     }
@@ -74,9 +76,9 @@ public class HomeController : Controller
         ViewBag.InfoDetalleArticulo = DBRopa.InfoArticulo(IdArticulo);
         return View("DetalleCompra");
     }
-    public IActionResult GuardarCliente(Cliente cliente)
+    public IActionResult GuardarCliente(string nombre, string contraseña, string mail)
     {
-        ViewBag.Cliente= DBRopa.GuardarClientes(cliente);
+        DBRopa.GuardarClientes(nombre, contraseña, mail);
         return View("Index");
     }
     
