@@ -13,7 +13,7 @@ private static List<Tipos> _ListaTipos = new List<Tipos>();
 private static List<Cliente> _ListaCliente = new List<Cliente>();
 
 
-  private static string _connectionString = @"Data Source=AA\SQLEXPRESS;Initial Catalog=BDRopa;Trusted_Connection=True;";
+  private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
 
   public static List<Articulo> TraerArticulo()
@@ -26,7 +26,6 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
         return _ListaArticulo;
     }
   
-
  public static List<Articulo> BuscarArticulos(string txt)
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -68,11 +67,19 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
         }
         return r;
     }
+    public static void AgregarCompra(int IdArticulo, string MedioDePago, string Direccion, string Email, int Telefono, string Nombre, int IdCliente)
+    {
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Insert Into Compra (IdArticulo, MedioDePago, Direccion, Email, Telefono, Nombre, IdCliente) Values (@pIdArticulo, @pMedioDePago, @pDireccion, @pEmail, @pTelefono, @pNombre, 1)";
+            db.Execute(sql, new {pIdArticulo = IdArticulo, pMedioDePago = MedioDePago, pDireccion = Direccion, pEmail = Email, pTelefono = Telefono, pNombre = Nombre, pIdCliente = 1});
+        }
+    }
 
      public static List<Articulo> ListarArticulos(int IdArticulo){
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Select * From Articulos Where IdArticulo = @pIdArticulo";
+            string sql = "Select * From Articulo Where IdArticulo = @pIdArticulo";
             _ListaArticulo = db.Query<Articulo>(sql, new {pIdArticulo = IdArticulo}).ToList();
         }
         return _ListaArticulo;

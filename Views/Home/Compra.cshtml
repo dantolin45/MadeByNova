@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Compra Page";
+    
+}
+
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h1 class="text-center">Detalles de Compra</h1>
+                <form action='@Url.Action("GuardarCompra", "Home")' method="post" enctype="multipart/form-data">   
+          <div class="modal-body">
+
+                <div class="form-outline">
+                    <input type="text" id="form12" name="Nombre" class="form-control" />
+                    <label class="form-label" for="form12">Ingrese su nombre</label>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <input type="text" id="form12" name="MedioDePago" class="form-control" />
+                    <label class="form-label" for="form12">Ingrese el medio de pago (tarjeta/efectivo)</label>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <input type="text" id="form12" name="Direccion" class="form-control" />
+                    <label class="form-label" for="form12">Ingrese su direccion</label>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <input type="email" id="form12" name="Email" class="form-control" />
+                    <label class="form-label" for="form12">Ingrese su email</label>
+                </div>
+                <div class="form-outline">
+                    <input type="tel" id="form12" name="Telefono" class="form-control" />
+                    <label class="form-label" for="form12">Ingrese su telefono</label>
+                </div>
+                
+        
+        <input type="hidden" name="IdArticulo" value="@ViewBag.Articulo">
+            
+          </div>
+          <div class="modal-footer">
+            <button href='@Url.Action("Index", "Home")' type="button" class="btn btn-secondary">Close</button>
+            <input type="submit" class="btn btn-primary" value="Save Changes" id="">
+          </div>
+       </form>
+            </div>
+    </section>
+
+      
