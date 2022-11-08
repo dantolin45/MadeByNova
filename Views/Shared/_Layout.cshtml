@@ -24,7 +24,7 @@
                 <li><a href='@Url.Action("Index", "Home")'><img src="~/img/madebynova.png" style="width: 100px;"></a></li>
                 <li>
                   <div class="search">
-                  <form action='@Url.Action("Busqueda", "Home")' role="search" method="get">
+                  <form action='@Url.Action("BusquedaArticulo", "Home")' role="search" method="get">
                     <input type="text" name ="txt" placeholder="Search" id="txt">
                     <input type="submit" value="Search" id="searchbtn">
                   </form>
@@ -106,7 +106,11 @@
             <h2 class="modal__title">Registrarse</h2>
              <p class="modal__paragraph">
               <div class="center">
-                <form action='@Url.Action("GuardarCliente", "Home")'>
+                <form action='@Url.Action("GuardarCliente", "Home")' method="post">
+                  <div class="login"> 
+                      
+                    <input type="text" name="mail"  placeholder="Email" id="txts"required>
+                      </div>
                     <div class="login"> 
                       
                     <input type="text" name="nombre"  placeholder="Username" id="txts"required>
@@ -114,16 +118,16 @@
                       
                        <div class="login"> 
                     
-                    <input type="text" name="contraseña" placeholder="Password" id="txts" required >
+                    <input type="password" name="contraseña" placeholder="Password" id="txts" required >
                       </div>
                       
                           <div class="btn">
                           <div class="inner"></div>
-                            <button type="submit" >Iniciar Sesion
+                            <button type="submit" >Registrarse
                         </div> 
                         <div class="btn">
                           <div class="inner"></div>
-                        <button href="#" class="modal__close" >Cerrar</button>
+                        <button href="#" class="modal__closeR" >Cerrar</button>
                       </div>
                       </form>
                  </div>
@@ -164,7 +168,7 @@
       <a href="" class="me-4 text-reset">
         <i class="fab fa-google"></i>
       </a>
-      <a href="" class="me-4 text-reset">
+      <a href="https://www.instagram.com/danteinsau_/" class="me-4 text-reset">
         <i class="fab fa-instagram"></i>
       </a>
       <a href="" class="me-4 text-reset">
@@ -190,8 +194,10 @@
             <i class="fas fa-gem me-3"></i>Made by Nova
           </h6>
           <p>
-            Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+             By noVa!
+             WHo!
+             nEw StYles 
+             AlL tiME
           </p>
         </div>
         <!-- Grid column -->
@@ -203,16 +209,16 @@
             Products
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="#!" class="text-reset">Remeras</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="#!" class="text-reset">Pantalones</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="#!" class="text-reset">Zapatillas</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="#!" class="text-reset">Shorts</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -224,10 +230,10 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="#!" class="text-reset">Quienes somos?</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="#!" class="text-reset">Just kidding</a>
           </p>
           <p>
             <a href="#!" class="text-reset">Orders</a>
@@ -242,10 +248,15 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> Yatay 224</p>
+    
           <p>
             <i class="fas fa-envelope me-3"></i>
             dantolin45@gmail.com
+            
+          </p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            loguzzolaficojuan@gmail.com
             
           </p>
           

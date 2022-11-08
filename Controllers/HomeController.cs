@@ -76,10 +76,12 @@ public class HomeController : Controller
         ViewBag.InfoDetalleArticulo = DBRopa.InfoArticulo(IdArticulo);
         return View("DetalleCompra");
     }
+    [HttpPost]    
     public IActionResult GuardarCliente(string nombre, string contraseña, string mail)
     {
         DBRopa.GuardarClientes(nombre, contraseña, mail);
-        return View("Index");
+        DBRopa.clienteLogueado =  ViewBag.Cliente;
+        return RedirectToAction("Index", "Home" );
     }
     
     [HttpPost]
