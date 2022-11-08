@@ -49,10 +49,12 @@ public class HomeController : Controller
         return View("Index");
 
     }
+    [HttpPost]
     public IActionResult BuscarCliente (string nombre, string contraseña)
     {
         ViewBag.Cliente = DBRopa.BuscarCliente(nombre, contraseña);
-        
+        DBRopa.clienteLogueado =  ViewBag.Cliente;
+        ViewBag.Articulo = DBRopa.TraerArticulo();
         return View("Index");
 
     }

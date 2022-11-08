@@ -12,8 +12,10 @@ private static List<Articulo> _ListaArticulo = new List<Articulo>();
 private static List<Tipos> _ListaTipos = new List<Tipos>();
 private static List<Cliente> _ListaCliente = new List<Cliente>();
 
+public static Cliente clienteLogueado = null;
 
-  private static string _connectionString = @"Data Source=AA\SQLEXPRESS;Initial Catalog=BDRopa;Trusted_Connection=True;";
+
+  private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
 
   public static List<Articulo> TraerArticulo()

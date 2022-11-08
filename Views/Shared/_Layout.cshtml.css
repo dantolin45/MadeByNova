@@ -135,6 +135,41 @@ button
 
 }
 
+#btnL
+{
+  background-color: #ffffff;
+  color: #e85909;
+  cursor: pointer;
+  
+
+}
+#btnL:hover 
+{
+  background-color: #ffffff;
+  color: #000000;
+  
+  
+
+}
+
+
+#btnLe
+{
+  background-color: #ffffff;
+  color: #e85909;
+  cursor: pointer;
+  
+
+}
+#btnLe:hover 
+{
+  background-color: #ffffff;
+  color: #000000;
+  
+  
+
+}
+
 /*search*/
 
 .search
