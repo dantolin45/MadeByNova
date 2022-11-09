@@ -49,11 +49,12 @@ public static Cliente clienteLogueado = null;
 
     public static Cliente BuscarCliente(string Nombre, string Contraseña)
     {
-        Cliente cliente = new Cliente();
+        Cliente cliente = null;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Cliente WHERE Nombre = @pNombre and Contraseña = @pContraseña";
             cliente = db.QueryFirstOrDefault<Cliente>(sql, new {pNombre = Nombre, pContraseña = Contraseña }); 
+           
         }
         return cliente;
     }

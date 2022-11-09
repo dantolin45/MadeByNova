@@ -13,6 +13,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+
+    public IActionResult Cliente()
+    {
+
+        return View();
+    }
     public IActionResult Index()
     {
         ViewBag.Articulo = DBRopa.TraerArticulo();
@@ -53,7 +59,14 @@ public class HomeController : Controller
     public IActionResult BuscarCliente (string nombre, string contraseña)
     {
         ViewBag.Cliente = DBRopa.BuscarCliente(nombre, contraseña);
+
         DBRopa.clienteLogueado =  ViewBag.Cliente;
+        if(ViewBag.Cliente == null)
+        {
+
+            ViewBag.ErrorLog = "Username no encontrado";
+        }
+     
         ViewBag.Articulo = DBRopa.TraerArticulo();
         return View("Index");
 
