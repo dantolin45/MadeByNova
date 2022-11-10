@@ -3,6 +3,32 @@
 
 // Write your JavaScript code.
 
+function IniciarSesion()
+{
+    var user= $("#Nombre").val();
+    var pass= $("#Pass").val();
+    $.ajax({
+        url: '/Home/BuscarCliente',
+        data: { nombre: user, contraseña: pass}, 
+        type: 'POST',
+        dataType : 'json',
+        success : function(response){
+                if (response==null)
+                {
+                    $("#error").html("Usuario o Contraseña incorrecta");
+                    return false;
+                }
+                else
+                {
+                    $("#InicioSesion").html('<li><a  href=""  id="btnL" > Bienvenido ' + response.nombre +'!</a></li>  <li> <a  href=""  id="btnLe" > Log-out </a></li>');
+                    $('#cerrar').trigger('click');
+                }
+
+            }
+        });
+
+}
+
 
 function GetDescripcion(idarticulo)
 {

@@ -55,21 +55,12 @@ public class HomeController : Controller
         return View("Index");
 
     }
-    [HttpPost]
-    public IActionResult BuscarCliente (string nombre, string contraseña)
+    public Cliente BuscarCliente (string nombre, string contraseña)
     {
         ViewBag.Cliente = DBRopa.BuscarCliente(nombre, contraseña);
 
         DBRopa.clienteLogueado =  ViewBag.Cliente;
-        if(ViewBag.Cliente == null)
-        {
-
-            ViewBag.ErrorLog = "Username no encontrado";
-        }
-     
-        ViewBag.Articulo = DBRopa.TraerArticulo();
-        return View("Index");
-
+        return DBRopa.clienteLogueado;
     }
     
     public IActionResult ArticuloTocar(int idarticulo)

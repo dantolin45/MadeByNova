@@ -32,26 +32,17 @@
                 </li>
                 
               
-                 
-                  @if (DBRopa.clienteLogueado == null)
-                  {
-                    <div class="contenedor-sign-up">
-                      <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" id="btnS" > Iniciar Sesion</a>
-                    </li> 
-
-                      <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" id="btnSe" > Registrarse</a>
-                      </li>
+                  <div class="contenedor-sign-up" id ="InicioSesion">
+                      @if (DBRopa.clienteLogueado == null)
+                      {
+                          <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" class="btnInicioSesion" > Iniciar Sesion</a></li> 
+                          <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" class="btnInicioSesion"> Registrarse</a></li>
+                      }
+                      else{
+                            <li> <a  href="" class="btnInicioSesion" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a></li> 
+                            <li> <a  href="" class="btnInicioSesion" id="btnLe" > Log-out </a></li>
+                      }
                     </div>
-                  }
-                  else{
-                    <div class="contenedor-sign-up">
-                        <li> <a  href="" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a>
-                    </li> 
-
-                      <li> <a  href="" id="btnLe" > Log-out </a>
-                      </li>
-                    </div>
-                  }
                 
                    
                   
@@ -76,27 +67,25 @@
                 <form action='@Url.Action("BuscarCliente", "Home")' method="post">
                     <div class="login"> 
                       
-                    <input type="text" name="nombre"  placeholder="Username" id="txts"required>
+                    <input type="text" name="nombre"  placeholder="Username" class="txts" id="Nombre" required>
                       </div>
                       
                        <div class="login"> 
                     
-                    <input type="password" name="contraseña" placeholder="Password" id="txts" required >
+                      <input type="password" name="contraseña" placeholder="Password" class="txts" id="Pass" required >
                       </div>
                       
                           <div class="btn">
                           <div class="inner"></div>
-                            <button type="submit" >Iniciar Sesion
+                            <button type="button" onclick="IniciarSesion()" >Iniciar Sesion
                         </div> 
                         <div class="btn">
                           <div class="inner"></div>
-                        <button href="#" class="modal__close" >Cerrar</button>
+                        <button href="#" class="modal__close" id="cerrar">Cerrar</button>
                       </div>
                       </form>
-                     @if(@ViewBag.ErrorLog != null)
-                     {
-                       /* hacer modal (q se habra automaticamente) y sino alert de js*/
-                     }
+                     <div style="color:red;" id="error">@ViewBag.ErrorLog</div>
+                     
                      
                  </div>
                  </div>
