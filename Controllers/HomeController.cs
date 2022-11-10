@@ -72,6 +72,7 @@ public class HomeController : Controller
     public IActionResult Compra(int idarticulo)
     {
         ViewBag.Articulo = idarticulo;
+        ViewBag.DetalleArticulo = DBRopa.InfoArticulo(idarticulo);
         return View("Compra");
 
     }

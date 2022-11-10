@@ -2,13 +2,21 @@
     ViewData["Title"] = "Compra Page";
     
 }
+<section class="py-5">
+    
+    <div class="container px-4 px-lg-5 mt-5">
 
-
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <h1 class="text-center">Detalles de Compra</h1>
-                <form action='@Url.Action("GuardarCompra", "Home")' method="post" enctype="multipart/form-data">   
-          <div class="modal-body">
+        <div class="card" style="width: 500px;  padding: 0px;">
+            <img src="@ViewBag.DetalleArticulo.ImagenArticulo" class="card-img-top rounded float-start" style="width: 100%; background: white;" alt="imagen articulo"/>   
+            <p>@ViewBag.DetalleArticulo.Nombre</p>
+            <div class="card-body">
+                <br>
+                <h5>$ @ViewBag.DetalleArticulo.Precio ARS</h5> 
+            </div>
+        </div>
+                
+                <form action='@Url.Action("GuardarCompra", "Home")' method="post" enctype="multipart/form-data" id="form" class="float-end ">   
+        <div class="modal-body ">
 
                 <div class="form-outline">
                     <input type="text" id="form12" name="Nombre" class="form-control" />
@@ -52,6 +60,9 @@
           </div>
        </form>
             </div>
+            
+
+
     </section>
 
       
