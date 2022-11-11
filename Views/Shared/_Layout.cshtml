@@ -1,10 +1,4 @@
-﻿@{
-
-
-}
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -35,12 +29,12 @@
                   <div class="contenedor-sign-up" id ="InicioSesion">
                       @if (DBRopa.clienteLogueado == null)
                       {
-                          <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" class="btnInicioSesion" > Iniciar Sesion</a></li> 
-                          <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" class="btnInicioSesion"> Registrarse</a></li>
+                          <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" class="btnInicioSesion" id="btnS"> Iniciar Sesion</a></li> 
+                          <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" class="btnInicioSesion" id="btnSe"> Registrarse</a></li>
                       }
                       else{
-                            <li> <a  href="" class="btnInicioSesion" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a></li> 
-                            <li> <a  href="" class="btnInicioSesion" id="btnLe" > Log-out </a></li>
+                            <li> <a  href='@Url.Action("Cliente","Home")' class="btnInicioSesion" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a></li> 
+                            <li> <a  href='@Url.Action("LogOut", "Home")' class="btnInicioSesion" id="btnLe" > Log-out </a></li>
                       }
                     </div>
                 
@@ -58,7 +52,7 @@
 
 
   
-<section class="modal" id="#modalCliente">
+<section class="modal" id="modalCliente">
         <div class="modal__container">
        
             <h2 class="modal__title">Inicia sesion</h2>
@@ -94,7 +88,7 @@
         </div>
     </section>
 
-    <section class="modale" id="#modalClienteR">
+    <section class="modale" id="modalClienteR">
         <div class="modal__container">
        
             <h2 class="modal__title">Registrarse</h2>

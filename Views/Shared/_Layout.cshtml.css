@@ -101,7 +101,7 @@ button
 /* btn navbar */  
 
 
-a.btnInicioSesion
+.contenedor-sign-up .btnInicioSesion
 {
   background-color: #ffffff;
   color: #e85909;

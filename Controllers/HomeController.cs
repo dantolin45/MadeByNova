@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿    using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP09.Models;
 
@@ -61,6 +61,11 @@ public class HomeController : Controller
 
         DBRopa.clienteLogueado =  ViewBag.Cliente;
         return DBRopa.clienteLogueado;
+    }
+    public IActionResult LogOut ()
+    {
+        DBRopa.clienteLogueado = null;
+        return View("Index");
     }
     
     public IActionResult ArticuloTocar(int idarticulo)
