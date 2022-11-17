@@ -32,12 +32,13 @@ button.accept-policy {
 .sas{
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 10;
     box-sizing: border-box;
     background-color: #ffffff;
     border-bottom:1px solid #e85909;
     box-shadow: -1px -1px 2px 2px #e85909;
 }
+
  
 li,a,button {
     font-family: 'Inter', sans-serif;
@@ -68,6 +69,8 @@ header
     flex-flow:wrap;
     list-style: none;
     justify-content: center;
+   
+    
  
 }
  
@@ -97,6 +100,27 @@ button
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+.nav__abajo
+{width: 100%;
+  background-color: #e85909;
+    flex-flow:wrap;
+    list-style: none;
+    justify-content: center;
+    color: #ffffff;
+}
+.nav__abajo li
+{
+  display: inline-block;
+    padding: 0px 20px;
+}
+.nav__abajo li a
+{
+  transition: all 0.3s ease 0s;
+  color: white;
+}
+.nav__abajo li a:hover {
+  color: #131212;
+}
 
 /* btn navbar */  
 
@@ -106,6 +130,28 @@ button
   background-color: #ffffff;
   color: #e85909;
   cursor: pointer;
+}
+
+/*Filtros*/
+
+.filtros
+{
+width: 25%;
+justify-content: space-between;
+display: flex;
+left: 37%;
+position: relative;
+}
+a.btnf {
+ 
+	box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  color: #ffffff;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+	
+  border: 0px solid black;
 }
 
 

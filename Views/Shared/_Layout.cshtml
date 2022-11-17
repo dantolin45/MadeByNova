@@ -29,8 +29,8 @@
                   <div class="contenedor-sign-up" id ="InicioSesion">
                       @if (DBRopa.clienteLogueado == null)
                       {
-                          <li> <a data-bs-toggle="modal" data-bs-target="#modalCliente" class="btnInicioSesion" id="btnS"> Iniciar Sesion</a></li> 
-                          <li> <a data-bs-toggle="modal" data-bs-target="#modalClienteR" class="btnInicioSesion" id="btnSe"> Registrarse</a></li>
+                          <li> <a data-bs-target="#modalCliente" class="btnInicioSesion" id="btnS"> Iniciar Sesion</a></li> 
+                          <li> <a data-bs-target="#modalClienteR" class="btnInicioSesion" id="btnSe"> Registrarse</a></li>
                       }
                       else{
                             <li> <a  href='@Url.Action("Cliente","Home")' class="btnInicioSesion" id="btnL" > Bienvenido @DBRopa.clienteLogueado.nombre!</a></li> 
@@ -42,11 +42,30 @@
                   
                 
             </ul>
+           
         </nav>
-
+           
         
  </div>
- <br><br>
+  
+
+
+
+        <ul class="nav__abajo">
+        <div class="filtros">
+          <a href="" class="btnf"> Zapatillas</a>
+          <a href="" class="btnf"> Zapatillas</a>
+          <a href="" class="btnf"> Zapatillas</a>
+        </div>
+
+
+
+        <br>
+        </ul>
+
+<br><br>
+
+
     
 <!-- NavDown -->
 

@@ -20,7 +20,7 @@ function IniciarSesion()
                 }
                 else
                 {
-                    $("#InicioSesion").html('  <div class="contenedor-sign-up" id ="InicioSesion"> <li><a  href="" class="btnInicioSesion" id="btnL" > Bienvenido ' + response.nombre +'!</a></li>  <li> <a '  + 'href=@Url.Action("BuscarClientee", "Home")' +'class="btnInicioSesion" id="btnLe" > Log-out </a></li> </div>');
+                    $("#InicioSesion").html('<div class="contenedor-sign-up" id ="InicioSesion"> <li><a  href="" class="btnInicioSesion" id="btnL" > Bienvenido ' + response.nombre +'!</a></li>  <li> <a '  + 'href=@Url.Action("BuscarClientee", "Home")' +'class="btnInicioSesion" id="btnLe" > Log-out </a></li> </div>');
                     
                     $('#cerrar').trigger('click');
                 }
