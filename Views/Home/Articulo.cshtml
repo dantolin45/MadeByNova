@@ -5,16 +5,37 @@
 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap">
-
-  
 <div class="contenedorA">
+  
+  <div class="row">
+    <div class="col-4"><img src="@ViewBag.Articulotocar.ImagenArticulo" class="card-img-top rounded float-start margin-top" style="width: 100%; background: white; margin-top:100px; margin-left:180px;" alt="imagen articulo"/></div>
+    <div class="col-2"></div>
+    <div class="col-4">    <div class="rounded float-end" style="margin-top:100px; margin-right:180px;">
+    <h3>@ViewBag.Articulotocar.Nombre</h3>
+    <p id="envio" style="margin-top: 30px;">ENVÍO GRATIS</p>
+    <h3 style="font-size: 39px; margin-top: 50px; font-family: Poppins,sans-serif;">$@ViewBag.Articulotocar.Precio</h3>
+    <p style="font-family: Poppins,sans-serif; font-size: 14px; font-weight: 400; color:#e85909">O EN HASTA 3 CUOTAS SIN INTERÉS!!</p>
+    <a href='@Url.Action("Compra", "Home", new{idarticulo = @ViewBag.Articulotocar.IdArticulo})' class="btn2" >Comprar</a>
+  </div></div>
+
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <p class="text-sm-start" style="font-family: Poppins,sans-serif; margin-left:10px;">Marca: @ViewBag.Articulotocar.Marca</p>
+  <p class="text-md-start" style="font-family: Poppins,sans-serif; margin-left:10px;">Genero: @ViewBag.Articulotocar.Genero</p>
+  <p class="text-lg-start" style="font-family: Poppins,sans-serif; margin-left:10px;">Origen: @ViewBag.Articulotocar.Origen</p>
+  <p class="text-xl-start" style="font-family: Poppins,sans-serif; margin-left:10px;">Material: @ViewBag.Articulotocar.Material</p>
+
+    </div>
+     
+  </div>
+ 
 
 
-  <img src="" alt="">
 
 
 
 
-</div>  
 
-
+</div>
