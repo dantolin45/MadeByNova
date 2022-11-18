@@ -44,7 +44,7 @@ li,a,button {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: edf0f1;
+    color: #edf0f1;
     text-decoration: none;
 }
  
@@ -101,12 +101,13 @@ button
     transition: all 0.3s ease 0s;
 }
 .nav__abajo
-{width: 100%;
-  background-color: #e85909;
+{
+    width: 100%;
+    background-color: #e85909;
     flex-flow:wrap;
     list-style: none;
-    
     color: #ffffff;
+    box-shadow: 2px 2px 2px 2px rgb(107, 107, 107);
 }
 .nav__abajo li
 {
@@ -139,13 +140,15 @@ button
 width: 25%;
 justify-content: space-between;
 display: flex;
-left: 37%;
+align-items: center;
+top: 35px;
+left: 28%;
 position: relative;
 }
-a.btnf {
+a.btnf li {
  
 	box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
-  color: #ffffff;
+  color: #e85909;
   display: inline-block;
   padding: 6px 30px 8px;
   position: relative;

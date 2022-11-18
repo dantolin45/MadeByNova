@@ -52,7 +52,7 @@ public class HomeController : Controller
     public IActionResult BusquedaArticulo (string txt)
     {
         ViewBag.Articulo = DBRopa.BuscarArticulos(txt);
-        return View("Index");
+        return View("BusquedaArt");
 
     }
     public Cliente BuscarCliente (string nombre, string contraseña)
