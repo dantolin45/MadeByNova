@@ -14,7 +14,7 @@ private static List<Cliente> _ListaCliente = new List<Cliente>();
 
 public static Cliente clienteLogueado = null;
 
-  private static string _connectionString = @"Data Source=localhost;Initial Catalog=BDRopa;Trusted_Connection=True;";
+  private static string _connectionString = @"Server=DESKTOP-TUNVRT7\SQLEXPRESS;Initial Catalog=BDRopa;Trusted_Connection=True;";
   
 
   public static List<Articulo> TraerArticulo()

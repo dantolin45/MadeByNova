@@ -29,7 +29,12 @@ body {
   text-decoration:  double;
   text-rendering: optimizeLegibility;
 }
-
+.btn2{
+  border-radius: 10px;
+}
+.categoria{
+  border-radius: 10px;
+}
 a.btn {
   background: #ffffff3a;
 	box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
@@ -41,8 +46,9 @@ a.btn {
 	transition: all 0.1s 0s ease-out;
   border: 0px solid black;
 }
+
 a.btn2 {
-  background: #7a6b6b3a;
+  background: #a308083a;
 	box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
   color: #e85909;
   display: inline-block;
@@ -52,13 +58,23 @@ a.btn2 {
 	transition: all 0.1s 0s ease-out;
   border: 0px solid black;
 }
-
+a.categoria {
+  background: #7c7b7b;
+	box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  color: #e85909;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+	transition: all 0.1s 0s ease-out;
+  border: 0px solid black;
+}
 a.btn:hover {
   background-color: #e85909;
   box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
   transform: translateY(-2px);
   transition: all 0.25s 0s ease-out;
-
+  
   color: #ffffff;
 }
 a.btn2:hover {
@@ -66,10 +82,17 @@ a.btn2:hover {
   box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
   transform: translateY(-2px);
   transition: all 0.25s 0s ease-out;
-
+  text-decoration: none;
   color: #ffffff;
 }
-
+a.categoria:hover {
+  background-color: #e85909;
+  box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+  text-decoration: none;
+  color: #ffffff;
+}
 .no-touch a.btn:active,
 a.btn:active {
   background: #e85909(black,2.5);
@@ -79,6 +102,19 @@ a.btn:active {
 }
 .no-touch a.btn2:active,
 a.btn2:active {
+  background: #e85909(black,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+.no-touch a.categoria:active,
+a.categoria:active {
+  background: #e85909(black,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+a.categoria:active {
   background: #e85909(black,2.5);
   box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
   transform: translate3d(0,1px,0);

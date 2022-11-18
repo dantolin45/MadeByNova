@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 a {
-  color: #0077cc;
+  color: #ffffff;
 }
 
 
@@ -105,7 +105,7 @@ button
   background-color: #e85909;
     flex-flow:wrap;
     list-style: none;
-    justify-content: center;
+    
     color: #ffffff;
 }
 .nav__abajo li
