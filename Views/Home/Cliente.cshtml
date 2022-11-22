@@ -1,3 +1,78 @@
 @{
-  ViewData["Title"] = "Perfil";
+  ViewData["Title"] ="Perfil de "+ DBRopa.clienteLogueado.nombre;
 }
+
+ <li class="nombre">@DBRopa.clienteLogueado.nombre</li>
+ <br>
+
+<div class="contenedorP">
+    <div class="contenedorT">
+      Perfil
+
+    </div>
+    <div class="contenedorInfo">
+      <div class="PerfilInfo">
+        
+      <li class="li"> Nombre</li>
+      
+      <li class="lil">@DBRopa.clienteLogueado.nombre</li>
+       </div>
+      <div class="PerfilInfo">
+      <li class="li">Mail</li>
+      <li class="lil">@DBRopa.clienteLogueado.mail</li>
+      </div>
+     <div class="PerfilInfo">
+      <li class="li">Direccion</li>
+      <li class="lil">@DBRopa.clienteLogueado.direccion</li>
+      </div>
+      <div class="PerfilInfo">
+      <li class="li">Telefono</li>
+      <li class="lil">@DBRopa.clienteLogueado.telefono</li>
+      </div>
+      <div class="PerfilInfo" style="border-bottom: 0px;">
+      <li class="li">Contraseña</li>
+      <li class="lil"></li>
+      </div>
+       
+    </div>
+    </div>
+    <div class="contenedorFooter">
+
+    </div>
+
+    <div class="contenedorC">
+    <div class="contenedorT">
+      Datos Registrados de Compra
+    </div>
+    <div class="contenedorInfo">
+      <div class="PerfilInfo">
+        
+      <li class="li"> Email</li>
+      
+      <li class="lil">@DBRopa.clienteLogueado.mail</li>
+       </div>
+       
+      
+        <div class="PerfilInfo">
+      <li class="li"> Direccion</li>
+      <li class="lil"> @DBRopa.clienteLogueado.direccion</li>
+      
+       </div>
+       <div class="PerfilInfo">
+        
+      <li class="li"> Telefono</li>
+      
+      <li class="lil">@DBRopa.clienteLogueado.telefono</li>
+       </div>
+      
+        
+       
+    </div>
+    </div>
+    <div class="contenedorFooter">
+
+    </div>
+
+
+
+</div>

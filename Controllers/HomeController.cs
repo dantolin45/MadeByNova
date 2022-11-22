@@ -64,8 +64,8 @@ public class HomeController : Controller
     }
     public IActionResult LogOut ()
     {
-        DBRopa.clienteLogueado = null;
-        return View("Index");
+        DBRopa.clienteLogueado = null;  
+        return RedirectToAction("Index");
     }
     
     public IActionResult ArticuloTocar(int idarticulo)
@@ -87,9 +87,9 @@ public class HomeController : Controller
         return View("DetalleCompra");
     }
     [HttpPost]    
-    public IActionResult GuardarCliente(string nombre, string contraseña, string mail)
+    public IActionResult GuardarCliente(string nombre, string contraseña, string mail ,string direccion, int telefono)
     {
-        DBRopa.GuardarClientes(nombre, contraseña, mail);
+        DBRopa.GuardarClientes(nombre, contraseña, mail,telefono ,direccion);
         DBRopa.clienteLogueado =  ViewBag.Cliente;
         return RedirectToAction("Index", "Home" );
     }
@@ -104,5 +104,6 @@ public class HomeController : Controller
         int IdEq = IdArticulo;
         return RedirectToAction("Index", "Home", new{IdArticulo = IdEq});     
     }
+
 
 }

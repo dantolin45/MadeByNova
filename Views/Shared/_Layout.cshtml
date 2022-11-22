@@ -116,18 +116,25 @@
              <p class="modal__paragraph">
               <div class="center">
                 <form action='@Url.Action("GuardarCliente", "Home")' method="post">
-                  <div class="login"> 
-                      
-                    <input type="text" name="mail"  placeholder="Email" id="txts"required>
-                      </div>
+                  
                     <div class="login"> 
-                      
-                    <input type="text" name="nombre"  placeholder="Username" id="txts"required>
+                    <input type="text" name="nombre"  placeholder="Username"class="txts" id="txts"required>
                       </div>
                       
-                       <div class="login"> 
-                    
-                    <input type="password" name="contraseña" placeholder="Password" id="txts" required >
+                       <div class="login">
+                    <input type="password" name="contraseña" placeholder="Password" class="txts" id="txts" required >
+                      </div>
+
+                      <div class="login"> 
+                    <input type="text" name="mail"  placeholder="Email" class="txts"id="txts"required>
+                      </div>
+
+                      <div class="login"> 
+                    <input type="text" name="telefono"  placeholder="Telefono" class="txts"id="txts"required>
+                      </div>
+                      <div class="login"> 
+                      
+                    <input type="text" name="direccion"  placeholder="Direccion" class="txts"id="txts"required>
                       </div>
                       
                           <div class="btn">

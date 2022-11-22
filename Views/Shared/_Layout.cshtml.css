@@ -123,15 +123,10 @@ button
   color: #131212;
 }
 
-/* btn navbar */  
+ 
 
 
-.contenedor-sign-up .btnInicioSesion
-{
-  background-color: #ffffff;
-  color: #e85909;
-  cursor: pointer;
-}
+
 
 /*Filtros*/
 
@@ -206,6 +201,12 @@ a.btnf li {
 }
 
 /* signup */
+.contenedor-sign-up .btnInicioSesion
+{
+  background-color: #ffffff;
+  color: #e85909;
+  cursor: pointer;
+}
 .contenedor-sign-up
 {
   position: absolute;

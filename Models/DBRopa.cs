@@ -59,12 +59,12 @@ public static Cliente clienteLogueado = null;
         return cliente;
     }
 
-     public static void GuardarClientes(string nombre, string contraseña, string mail)
+     public static void GuardarClientes(string nombre, string contraseña, string mail,  int telefono, string direccion)
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Insert Into Cliente(Nombre, Contraseña,Mail) VALUES (@pnombre, @pcontraseña, @pmail)";
-            db.Execute(sql , new{pnombre= nombre, pcontraseña = contraseña, pmail=mail }); 
+            string sql = "Insert Into Cliente(Nombre, Contraseña,Mail,Telefono, Direccion) VALUES (@pnombre, @pcontraseña, @pmail, @ptelefono, @pdireccion)";
+            db.Execute(sql , new{pnombre= nombre, pcontraseña = contraseña, pmail=mail,  ptelefono=telefono, pdireccion=direccion }); 
         }
        
     }
